@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Account` struct in crate `ethcore`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Account">
+
+    <title>ethcore::account::Account - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>ethcore</a>::<wbr><a href='index.html'>account</a></p><script>window.sidebarCurrent = {name: 'Account', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>ethcore</a>::<wbr><a href='index.html'>account</a>::<wbr><a class='struct' href=''>Account</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-2380' class='srclink' href='../../src/ethcore/account.rs.html#6-19' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Account {
+    // some fields omitted
+}</pre><div class='docblock'><p>Single account in the system.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../ethcore/account/struct.Account.html' title='ethcore::account::Account'>Account</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(balance: <a class='struct' href='../../ethcore_util/uint/struct.U256.html' title='ethcore_util::uint::U256'>U256</a>, nonce: <a class='struct' href='../../ethcore_util/uint/struct.U256.html' title='ethcore_util::uint::U256'>U256</a>, storage: <a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;<a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a>, <a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a>&gt;, code: <a class='type' href='../../ethcore_util/bytes/type.Bytes.html' title='ethcore_util::bytes::Bytes'>Bytes</a>) -&gt; <a class='struct' href='../../ethcore/account/struct.Account.html' title='ethcore::account::Account'>Account</a></code></h4>
+<div class='docblock'><p>General constructor.</p>
+</div><h4 id='method.from_pod' class='method'><code>fn <a href='#method.from_pod' class='fnname'>from_pod</a>(pod: <a class='struct' href='../../ethcore/pod_account/struct.PodAccount.html' title='ethcore::pod_account::PodAccount'>PodAccount</a>) -&gt; <a class='struct' href='../../ethcore/account/struct.Account.html' title='ethcore::account::Account'>Account</a></code></h4>
+<div class='docblock'><p>General constructor.</p>
+</div><h4 id='method.new_basic' class='method'><code>fn <a href='#method.new_basic' class='fnname'>new_basic</a>(balance: <a class='struct' href='../../ethcore_util/uint/struct.U256.html' title='ethcore_util::uint::U256'>U256</a>, nonce: <a class='struct' href='../../ethcore_util/uint/struct.U256.html' title='ethcore_util::uint::U256'>U256</a>) -&gt; <a class='struct' href='../../ethcore/account/struct.Account.html' title='ethcore::account::Account'>Account</a></code></h4>
+<div class='docblock'><p>Create a new account with the given balance.</p>
+</div><h4 id='method.from_rlp' class='method'><code>fn <a href='#method.from_rlp' class='fnname'>from_rlp</a>(rlp: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>) -&gt; <a class='struct' href='../../ethcore/account/struct.Account.html' title='ethcore::account::Account'>Account</a></code></h4>
+<div class='docblock'><p>Create a new account from RLP.</p>
+</div><h4 id='method.new_contract' class='method'><code>fn <a href='#method.new_contract' class='fnname'>new_contract</a>(balance: <a class='struct' href='../../ethcore_util/uint/struct.U256.html' title='ethcore_util::uint::U256'>U256</a>) -&gt; <a class='struct' href='../../ethcore/account/struct.Account.html' title='ethcore::account::Account'>Account</a></code></h4>
+<div class='docblock'><p>Create a new contract account.
+NOTE: make sure you use <code>init_code</code> on this before <code>commit</code>ing.</p>
+</div><h4 id='method.reset_code' class='method'><code>fn <a href='#method.reset_code' class='fnname'>reset_code</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>Reset this account to the status of a not-yet-initialised contract.
+NOTE: Account should have <code>init_code()</code> called on it later.</p>
+</div><h4 id='method.init_code' class='method'><code>fn <a href='#method.init_code' class='fnname'>init_code</a>(&amp;mut self, code: <a class='type' href='../../ethcore_util/bytes/type.Bytes.html' title='ethcore_util::bytes::Bytes'>Bytes</a>)</code></h4>
+<div class='docblock'><p>Set this account&#39;s code to the given code.
+NOTE: Account should have been created with <code>new_contract()</code> or have <code>reset_code()</code> called on it.</p>
+</div><h4 id='method.set_storage' class='method'><code>fn <a href='#method.set_storage' class='fnname'>set_storage</a>(&amp;mut self, key: <a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a>, value: <a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a>)</code></h4>
+<div class='docblock'><p>Set (and cache) the contents of the trie&#39;s storage at <code>key</code> to <code>value</code>.</p>
+</div><h4 id='method.storage_at' class='method'><code>fn <a href='#method.storage_at' class='fnname'>storage_at</a>(&amp;self, db: &amp;<a class='trait' href='../../ethcore_util/hashdb/trait.HashDB.html' title='ethcore_util::hashdb::HashDB'>HashDB</a>, key: &amp;<a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a>) -&gt; <a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a></code></h4>
+<div class='docblock'><p>Get (and cache) the contents of the trie&#39;s storage at <code>key</code>.</p>
+</div><h4 id='method.balance' class='method'><code>fn <a href='#method.balance' class='fnname'>balance</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../ethcore_util/uint/struct.U256.html' title='ethcore_util::uint::U256'>U256</a></code></h4>
+<div class='docblock'><p>return the balance associated with this account.</p>
+</div><h4 id='method.nonce' class='method'><code>fn <a href='#method.nonce' class='fnname'>nonce</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../ethcore_util/uint/struct.U256.html' title='ethcore_util::uint::U256'>U256</a></code></h4>
+<div class='docblock'><p>return the nonce associated with this account.</p>
+</div><h4 id='method.code_hash' class='method'><code>fn <a href='#method.code_hash' class='fnname'>code_hash</a>(&amp;self) -&gt; <a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a></code></h4>
+<div class='docblock'><p>return the code hash associated with this account.</p>
+</div><h4 id='method.code' class='method'><code>fn <a href='#method.code' class='fnname'>code</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>&gt;</code></h4>
+<div class='docblock'><p>returns the account&#39;s code. If <code>None</code> then the code cache isn&#39;t available -
+get someone who knows to call <code>note_code</code>.</p>
+</div><h4 id='method.note_code' class='method'><code>fn <a href='#method.note_code' class='fnname'>note_code</a>(&amp;mut self, code: <a class='type' href='../../ethcore_util/bytes/type.Bytes.html' title='ethcore_util::bytes::Bytes'>Bytes</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a>&gt;</code></h4>
+<div class='docblock'><p>Provide a byte array which hashes to the <code>code_hash</code>. returns the hash as a result.</p>
+</div><h4 id='method.is_cached' class='method'><code>fn <a href='#method.is_cached' class='fnname'>is_cached</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Is <code>code_cache</code> valid; such that code is going to return Some?</p>
+</div><h4 id='method.cache_code' class='method'><code>fn <a href='#method.cache_code' class='fnname'>cache_code</a>(&amp;mut self, db: &amp;<a class='trait' href='../../ethcore_util/hashdb/trait.HashDB.html' title='ethcore_util::hashdb::HashDB'>HashDB</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Provide a database to lookup <code>code_hash</code>. Should not be called if it is a contract without code.</p>
+</div><h4 id='method.base_root' class='method'><code>fn <a href='#method.base_root' class='fnname'>base_root</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a></code></h4>
+<div class='docblock'><p>return the storage root associated with this account.</p>
+</div><h4 id='method.storage_is_clean' class='method'><code>fn <a href='#method.storage_is_clean' class='fnname'>storage_is_clean</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Determine whether there are any un-<code>commit()</code>-ed storage-setting operations.</p>
+</div><h4 id='method.storage_root' class='method'><code>fn <a href='#method.storage_root' class='fnname'>storage_root</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a>&gt;</code></h4>
+<div class='docblock'><p>return the storage root associated with this account or None if it has been altered via the overlay.</p>
+</div><h4 id='method.recent_storage_root' class='method'><code>fn <a href='#method.recent_storage_root' class='fnname'>recent_storage_root</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a></code></h4>
+<div class='docblock'><p>return the storage root associated with this account or None if it has been altered via the overlay.</p>
+</div><h4 id='method.storage_overlay' class='method'><code>fn <a href='#method.storage_overlay' class='fnname'>storage_overlay</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html' title='core::cell::Ref'>Ref</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;<a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(<a class='enum' href='../../ethcore_util/misc/enum.Filth.html' title='ethcore_util::misc::Filth'>Filth</a>, <a class='struct' href='../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a>)</a>&gt;&gt;</code></h4>
+<div class='docblock'><p>return the storage overlay.</p>
+</div><h4 id='method.inc_nonce' class='method'><code>fn <a href='#method.inc_nonce' class='fnname'>inc_nonce</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>Increment the nonce of the account by one.</p>
+</div><h4 id='method.add_balance' class='method'><code>fn <a href='#method.add_balance' class='fnname'>add_balance</a>(&amp;mut self, x: &amp;<a class='struct' href='../../ethcore_util/uint/struct.U256.html' title='ethcore_util::uint::U256'>U256</a>)</code></h4>
+<div class='docblock'><p>Increment the nonce of the account by one.</p>
+</div><h4 id='method.sub_balance' class='method'><code>fn <a href='#method.sub_balance' class='fnname'>sub_balance</a>(&amp;mut self, x: &amp;<a class='struct' href='../../ethcore_util/uint/struct.U256.html' title='ethcore_util::uint::U256'>U256</a>)</code></h4>
+<div class='docblock'><p>Increment the nonce of the account by one.</p>
+</div><h4 id='method.commit_storage' class='method'><code>fn <a href='#method.commit_storage' class='fnname'>commit_storage</a>(&amp;mut self, db: &amp;mut <a class='trait' href='../../ethcore_util/hashdb/trait.HashDB.html' title='ethcore_util::hashdb::HashDB'>HashDB</a>)</code></h4>
+<div class='docblock'><p>Commit the <code>storage_overlay</code> to the backing DB and update <code>storage_root</code>.</p>
+</div><h4 id='method.commit_code' class='method'><code>fn <a href='#method.commit_code' class='fnname'>commit_code</a>(&amp;mut self, db: &amp;mut <a class='trait' href='../../ethcore_util/hashdb/trait.HashDB.html' title='ethcore_util::hashdb::HashDB'>HashDB</a>)</code></h4>
+<div class='docblock'><p>Commit any unsaved code. <code>code_hash</code> will always return the hash of the <code>code_cache</code> after this.</p>
+</div><h4 id='method.rlp' class='method'><code>fn <a href='#method.rlp' class='fnname'>rlp</a>(&amp;self) -&gt; <a class='type' href='../../ethcore_util/bytes/type.Bytes.html' title='ethcore_util::bytes::Bytes'>Bytes</a></code></h4>
+<div class='docblock'><p>Export to RLP.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../ethcore/account/struct.Account.html' title='ethcore::account::Account'>Account</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../ethcore/account/struct.Account.html' title='ethcore::account::Account'>Account</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../ethcore/account/struct.Account.html' title='ethcore::account::Account'>Account</a></code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "ethcore";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

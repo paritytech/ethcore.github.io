@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ethcore` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ethcore">
+
+    <title>ethcore - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'></p><script>window.sidebarCurrent = {name: 'ethcore', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>ethcore</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-0' class='srclink' href='../src/ethcore/lib.rs.html#1-156' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Ethcore&#39;s ethereum implementation</p>
+
+<h3 id='rust-version' class='section-header'><a href='#rust-version'>Rust version</a></h3>
+<ul>
+<li>beta</li>
+<li>nightly</li>
+</ul>
+
+<h3 id='supported-platforms' class='section-header'><a href='#supported-platforms'>Supported platforms:</a></h3>
+<ul>
+<li>OSX</li>
+<li>Linux/Ubuntu</li>
+</ul>
+
+<h3 id='dependencies' class='section-header'><a href='#dependencies'>Dependencies:</a></h3>
+<ul>
+<li>RocksDB 3.13</li>
+<li>LLVM 3.7 (optional, required for <code>jit</code>)</li>
+<li>evmjit (optional, required for <code>jit</code>)</li>
+</ul>
+
+<h3 id='dependencies-installation' class='section-header'><a href='#dependencies-installation'>Dependencies Installation</a></h3>
+<ul>
+<li><p>OSX</p>
+
+<ul>
+<li><p>rocksdb
+<code>bash brew install rocksdb</code></p></li>
+<li><p>llvm</p>
+
+<ul>
+<li>download llvm 3.7 from <a href="http://llvm.org/apt/">http://llvm.org/apt/</a></li>
+</ul>
+
+<pre><code class="language-bash">cd llvm-3.7.0.src
+mkdir build &amp;&amp; cd $_
+cmake -G &quot;Unix Makefiles&quot; .. -DCMAKE_C_FLAGS_RELEASE= -DCMAKE_CXX_FLAGS_RELEASE= -DCMAKE_INSTALL_PREFIX=/usr/local/Cellar/llvm/3.7 -DCMAKE_BUILD_TYPE=Release
+make &amp;&amp; make install
+</code></pre></li>
+<li><p>evmjit</p>
+
+<ul>
+<li>download from <a href="https://github.com/debris/evmjit">https://github.com/debris/evmjit</a></li>
+</ul>
+
+<pre><code class="language-bash">cd evmjit
+mkdir build &amp;&amp; cd $_
+cmake -DLLVM_DIR=/usr/local/lib/llvm-3.7/share/llvm/cmake ..
+make &amp;&amp; make install
+</code></pre></li>
+</ul></li>
+<li><p>Linux/Ubuntu</p>
+
+<ul>
+<li>rocksdb</li>
+</ul>
+
+<pre><code class="language-bash">wget https://github.com/facebook/rocksdb/archive/rocksdb-3.13.tar.gz
+tar xvf rocksdb-3.13.tar.gz &amp;&amp; cd rocksdb-rocksdb-3.13 &amp;&amp; make shared_lib
+sudo make install
+</code></pre>
+
+<ul>
+<li><p>llvm</p>
+
+<ul>
+<li>install using packages from <a href="http://llvm.org/apt/">http://llvm.org/apt/</a></li>
+</ul></li>
+<li><p>evmjit</p>
+
+<ul>
+<li>download from <a href="https://github.com/debris/evmjit">https://github.com/debris/evmjit</a></li>
+</ul>
+
+<pre><code class="language-bash">cd evmjit
+mkdir build &amp;&amp; cd $_
+cmake .. &amp;&amp; make
+sudo make install
+sudo ldconfig
+</code></pre></li>
+</ul></li>
+</ul>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='account/index.html'
+                               title='ethcore::account'>account</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='account_diff/index.html'
+                               title='ethcore::account_diff'>account_diff</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='action_params/index.html'
+                               title='ethcore::action_params'>action_params</a></td>
+                        <td class='docblock short'>
+                             <p>Evm input params.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='basic_types/index.html'
+                               title='ethcore::basic_types'>basic_types</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Tomusdrw] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='block/index.html'
+                               title='ethcore::block'>block</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [arkpar] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='blockchain/index.html'
+                               title='ethcore::blockchain'>blockchain</a></td>
+                        <td class='docblock short'>
+                             <p>Fast access to blockchain data.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='builtin/index.html'
+                               title='ethcore::builtin'>builtin</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='client/index.html'
+                               title='ethcore::client'>client</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [arkpar] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='common/index.html'
+                               title='ethcore::common'>common</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='engine/index.html'
+                               title='ethcore::engine'>engine</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='env_info/index.html'
+                               title='ethcore::env_info'>env_info</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='error/index.html'
+                               title='ethcore::error'>error</a></td>
+                        <td class='docblock short'>
+                             <p>General error types for use in ethcore.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='ethereum/index.html'
+                               title='ethcore::ethereum'>ethereum</a></td>
+                        <td class='docblock short'>
+                             <p>Ethereum protocol module.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='evm/index.html'
+                               title='ethcore::evm'>evm</a></td>
+                        <td class='docblock short'>
+                             <p>Ethereum virtual machine.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='executive/index.html'
+                               title='ethcore::executive'>executive</a></td>
+                        <td class='docblock short'>
+                             <p>Transaction Execution environment.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='externalities/index.html'
+                               title='ethcore::externalities'>externalities</a></td>
+                        <td class='docblock short'>
+                             <p>Transaction Execution environment.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='extras/index.html'
+                               title='ethcore::extras'>extras</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='header/index.html'
+                               title='ethcore::header'>header</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [debris] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='log_entry/index.html'
+                               title='ethcore::log_entry'>log_entry</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='null_engine/index.html'
+                               title='ethcore::null_engine'>null_engine</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='pod_account/index.html'
+                               title='ethcore::pod_account'>pod_account</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='pod_state/index.html'
+                               title='ethcore::pod_state'>pod_state</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='queue/index.html'
+                               title='ethcore::queue'>queue</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [debris] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='receipt/index.html'
+                               title='ethcore::receipt'>receipt</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='service/index.html'
+                               title='ethcore::service'>service</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='spec/index.html'
+                               title='ethcore::spec'>spec</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [debris] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='state/index.html'
+                               title='ethcore::state'>state</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='state_diff/index.html'
+                               title='ethcore::state_diff'>state_diff</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='substate/index.html'
+                               title='ethcore::substate'>substate</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [arkpar] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='sync/index.html'
+                               title='ethcore::sync'>sync</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [arkpar] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='transaction/index.html'
+                               title='ethcore::transaction'>transaction</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [Gav Wood] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='verification/index.html'
+                               title='ethcore::verification'>verification</a></td>
+                        <td class='docblock short'>
+                             <p>TODO [arkpar] Please document me</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='views/index.html'
+                               title='ethcore::views'>views</a></td>
+                        <td class='docblock short'>
+                             <p>Block oriented views onto rlp.</p>
+
+                        </td>
+                    </tr>
+                </table><h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='macro' href='macro.evm_test!.html'
+                               title='ethcore::evm_test!'>evm_test!</a></td>
+                        <td class='docblock short'>
+                             <p>Create tests by injecting different VM factories</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='macro' href='macro.evm_test_ignore!.html'
+                               title='ethcore::evm_test_ignore!'>evm_test_ignore!</a></td>
+                        <td class='docblock short'>
+                             <p>Create ignored tests by injecting different VM factories</p>
+
+                        </td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "ethcore";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

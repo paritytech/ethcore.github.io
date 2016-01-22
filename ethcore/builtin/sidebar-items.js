@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["copy_to","TODO [Gav Wood] Please document me"],["new_builtin_exec","Create a new builtin executor according to `name`. TODO: turn in to a factory with dynamic registration."]],"struct":[["Builtin","Definition of a contract whose implementation is built-in."]]});

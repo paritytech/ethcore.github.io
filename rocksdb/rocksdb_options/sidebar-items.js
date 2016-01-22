@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BlockBasedOptions",""],["Options",""]]});

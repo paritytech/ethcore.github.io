@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["contract_address","Returns new address created from address and given nonce."]],"struct":[["Executed","Transaction execution receipt."],["Executive","Transaction executor."]],"type":[["ExecutionResult","Transaction execution result."]]});

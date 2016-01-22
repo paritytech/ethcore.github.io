@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["State","Representation of the entire state of all accounts in the system."]],"type":[["ApplyResult","TODO [Gav Wood] Please document me"]]});

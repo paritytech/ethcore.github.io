@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ActionParams","Action (call/create) input params. Everything else should be specified in Externalities."]]});

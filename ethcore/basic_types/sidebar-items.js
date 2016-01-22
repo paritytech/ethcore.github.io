@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Seal","TODO [Gav Wood] Please document me"]],"static":[["ZERO_LOGBLOOM","Constant 2048-bit datum for 0. Often used as a default."]],"type":[["LogBloom","Type for a 2048-bit log-bloom, as used by our blocks."]]});
