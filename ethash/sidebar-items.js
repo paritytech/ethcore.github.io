@@ -1,1 +1,0 @@
-initSidebarItems({"constant":[["ETHASH_EPOCH_LENGTH",""]],"fn":[["quick_get_difficulty","Difficulty quick check for POW preverification"]],"struct":[["EthashManager","Lighy/Full cache manager"],["ProofOfWork","Computation result"]],"type":[["H256",""]]});

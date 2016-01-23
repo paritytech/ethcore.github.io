@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["BlockChain","Structure providing fast access to blockchain data."],["CacheSize","Represents blockchain's in-memory cache size in bytes."],["TreeRoute","Represents a tree route between `from` block and `to` block:"]],"trait":[["BlockProvider","Interface for querying blocks by hash and by number."]]});

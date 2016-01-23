@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["NibbleSlice","Nibble-orientated view onto byte-slice, allowing nibble-precision offsets."],["NibbleSliceIterator","TODO [Gav Wood] Please document me"]]});

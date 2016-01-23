@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["Existance","Change in existance type."]],"struct":[["AccountDiff","TODO [Gav Wood] Please document me"]]});

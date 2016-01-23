@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Account","Single account in the system."]]});

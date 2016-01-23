@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["Diff","Diff type for specifying a change (or not)."],["Filth","Boolean type for clean/dirty status."]]});

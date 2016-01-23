@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["OutputPolicy","Policy for handling output data on `RETURN` opcode."]],"struct":[["Externalities","Implementation of evm Externalities."],["OriginInfo","Transaction properties that externalities need to know about."]]});

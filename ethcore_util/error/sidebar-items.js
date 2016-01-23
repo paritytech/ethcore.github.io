@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["BaseDataError","TODO [Gav Wood] Please document me"],["UtilError","General error type which should be capable of representing all errors in ethcore."]]});

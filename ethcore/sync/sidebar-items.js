@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["SyncMessage","Message type for external events"]],"struct":[["EthSync","Ethereum network protocol handler"],["SyncStatus","Syncing status and statistics"]],"type":[["NetSyncMessage","TODO [arkpar] Please document me"]]});

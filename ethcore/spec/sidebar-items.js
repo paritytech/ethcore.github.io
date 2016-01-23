@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["gzip64res_to_json","Converts file from base64 gzipped bytes to json"]],"struct":[["GenesisAccount","Genesis account data. Does no thave a DB overlay cache"],["Spec","Parameters for a block chain; includes both those intrinsic to the design of the chain and those to be interpreted by the active chain engine."]]});

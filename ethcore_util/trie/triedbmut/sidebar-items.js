@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["TrieDBMut","A `Trie` implementation using a generic `HashDB` backing database."]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["log2","log2"]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["BlockQueue","A queue of blocks. Sits between network or other I/O and the BlockChain. Sorts them ready for blockchain insertion."]]});

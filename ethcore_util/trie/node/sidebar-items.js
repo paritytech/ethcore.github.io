@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["Node","Type of node in the trie and essential information thereof."]]});

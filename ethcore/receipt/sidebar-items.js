@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Receipt","Information describing execution of a transaction."]]});

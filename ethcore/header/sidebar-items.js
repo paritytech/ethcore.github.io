@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Header","A block header."]],"type":[["BlockNumber","Type for Block number"]]});

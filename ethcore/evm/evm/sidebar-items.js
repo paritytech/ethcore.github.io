@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["Error","Evm errors."]],"trait":[["Evm","Evm interface."]],"type":[["Result","Evm result."]]});

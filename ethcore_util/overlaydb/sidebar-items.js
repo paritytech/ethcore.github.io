@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["OverlayDB","Implementation of the HashDB trait for a disk-backed database with a memory overlay."]]});
